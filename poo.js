@@ -20,40 +20,12 @@ function onClick() {
 }
 
 
-function start() {
-  gapi.client.init({
-    'apiKey': 'AIzaSyAXVWtUzAZoCdHEcaFGO2Z9oYawVywAY88',
-    'clientId': '257135603408-haa6s5sb4rmrrb5a21g9jpohrvla30pe.apps.googleusercontent.com',
-    'scope': 'plus.login',
-  }).then(function() {
-    return gapi.client.request({
-      'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
-    })
-  }).then(function(response) {
-    console.log(response.result);
-  }, function(reason) {
-    console.log('Error: ' + reason.result.error.message);
-  });
-};
-gapi.load('client', start);
 
 function onSuccess(googleUser) {
 		var profile = googleUser.getBasicProfile();
 		console.log('Logged in as: ' + profile.getName());
 		console.log('ID: ' + profile.getId());
-		console.log('Email: ' + profile.getEmail());
-	
-	var request = gapi.client.plus.people.get({
-  'userId' : 'me'
-});
-
-request.execute(function(resp) {
-  console.log('ID: ' + resp.id);
-  console.log('Display Name: ' + resp.displayName);
-  console.log('Image URL: ' + resp.image.url);
-  console.log('Profile URL: ' + resp.url);
-});
-	
+		console.log('Email: ' + profile.getEmail());	
 	}
 	
 	
