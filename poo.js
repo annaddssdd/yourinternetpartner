@@ -1,6 +1,5 @@
 var clicks = 0;
 
-
 function onClick() {
 		if (clicks === 0) {
 		document.getElementById("demo").innerHTML = "go back to your family"; 
@@ -20,14 +19,30 @@ function onClick() {
 }
 
 
-
 function onSuccess(googleUser) {
-		var profile = googleUser.getBasicProfile();
-		console.log('Logged in as: ' + profile.getName());
-		console.log('ID: ' + profile.getId());
-		console.log('Email: ' + profile.getEmail());	
+	var profile = googleUser.getBasicProfile();
+	var name = profile.getName();
+	loadGirlfriendHTML( name );
+	console.log('Logged in as: ' + name);	
+	console.log('ID: ' + profile.getId());
+	console.log('Email: ' + profile.getEmail());
+		
+}
+
+function loadGirlfriendHTML( profileName ){
+	var girlfriendHTML;
+	if (profileName === "Anna Gan") {
+		girlfriendHTML = "<img src=\"girlfriend 1.jpg\">";
+	} else if (profileName === "Tom Lewis") {
+		girlfriendHTML = "<img src=\"girlfriend 3.jpg\">";
+	} else {
+		girlfriendHTML = "<img src=\"girlfriend 2.jpg\">";
 	}
+	document.getElementById("demo2").innerHTML = girlfriendHTML;
+}
 	
+
+
 	
 function onFailure(error) {
 		console.log(error);
@@ -45,6 +60,7 @@ function renderButton() {
 			'onfailure': onFailure
 			});
 	}
+
 
 
 function signOut() {
