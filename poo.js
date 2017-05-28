@@ -32,11 +32,11 @@ function onSuccess(googleUser) {
 function loadGirlfriendHTML( profileName ){
 	var girlfriendHTML;
 	if (profileName === "Anna Gan") {
-		girlfriendHTML = "<img src=\"girlfriend 1.jpg\">";
+		girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
 	} else if (profileName === "Tom Lewis") {
-		girlfriendHTML = "<img src=\"girlfriend 3.jpg\">";
+		girlfriendHTML = "<img src=\"girlfriend3.jpg\">";
 	} else {
-		girlfriendHTML = "<img src=\"girlfriend 2.jpg\">";
+		girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
 	}
 	document.getElementById("demo2").innerHTML = girlfriendHTML;
 }
