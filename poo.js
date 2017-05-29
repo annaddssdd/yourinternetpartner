@@ -34,7 +34,7 @@ function loadGirlfriendHTML( profileName ){
 	var girlfriendHTML;
 		if (profileName === "Anna Gan") {
 		girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
-	} else if (profileName === "Elyse Phee") {
+	} else if (profileName === "Ellen Kelly") {
 		girlfriendHTML = "<img src=\"girlfriend3.jpg\">";
 	} else if (profileName === "Ivy Calvert") {
 		girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
@@ -70,7 +70,7 @@ function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
-				document.getElementById("demo2").innerHTML = "CHECK OUT YOUR GIRLFRIEND HERE!";
+				document.getElementById("demo2").innerHTML = "CHECK OUT YOUR GIRLFRIEND NOW!";
 	});
   }
  
