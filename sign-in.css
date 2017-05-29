@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-	color: white;
+	color: purple;
 }
 
 p {
@@ -51,8 +51,8 @@ a:active {
 
 #girlfriend {
 	margin: auto;
-	width: 30%;
-	height: 30%;
+	width: 35%;
+	height: 35%;
 	border: white 10px solid;
 	background-color: hotpink;
 }
