@@ -34,7 +34,7 @@ function onSuccess(googleUser) {
 }
 
 function loadGirlfriendHTML( profileName ){
-	console.log(profileName);
+	console.log("trgftrfctr", profileName);
 	var girlfriendHTML;
 
 		if (profileName === "Anna Gan") {
