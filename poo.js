@@ -26,7 +26,7 @@ function onSuccess(googleUser) {
 	var name = profile.getName();
 	var firstName = profile.getGivenName();
 	var lastName = profile.getFamilyName();
-	loadGirlfriendHTML(profile.getName());
+	signInName = profile.getName();
 	console.log('Logged in as: ' + name);	
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
@@ -34,21 +34,24 @@ function onSuccess(googleUser) {
 }
 
 function loadGirlfriendHTML(profileName) {
-	console.log("trgftrfctr", profileName);
-	var girlfriendHTML;
+	var profileName = signInName;	
+	if (signInSuccess) {
+		console.log("trgftrfctr", profileName);
+		var girlfriendHTML;
 
 		if (profileName === "Anna Gan") {
-		girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
-	} else if (profileName === "Yifei Li") {
-		girlfriendHTML = "<img src=\"girlfriend3.JPG\">";
-	} else if (profileName === "Ivy Calvert") {
-		girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
-	} else if (profileName === "Tom Lewis") {
-		girlfriendHTML = "<img src=\"girlfriend5.jpg\">";
-	} else {
-		girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
-	}
+			girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
+		} else if (profileName === "Yifei Li") {
+			girlfriendHTML = "<img src=\"girlfriend3.JPG\">";
+		} else if (profileName === "Ivy Calvert") {
+			girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
+		} else if (profileName === "Tom Lewis") {
+			girlfriendHTML = "<img src=\"girlfriend5.jpg\">";
+		} else {
+			girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
+		}
 		document.getElementById("demo2").innerHTML = girlfriendHTML;
+	}
 }
 
 	
