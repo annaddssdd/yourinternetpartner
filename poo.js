@@ -1,5 +1,6 @@
 var clicks = 0;
-
+var signInSuccess = false;
+var signInName = "";
 function onClick() {
 		if (clicks === 0) {
 		document.getElementById("demo").innerHTML = "go back to your family"; 
@@ -20,15 +21,16 @@ function onClick() {
 
 
 function onSuccess(googleUser) {
+	signInSuccess = true;
 	var profile = googleUser.getBasicProfile();
 	var name = profile.getName();
 	var firstName = profile.getGivenName();
 	var lastName = profile.getFamilyName();
-	loadGirlfriendHTML(name);
+	
 	console.log('Logged in as: ' + name);	
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
-	document.getElementById("demo2").innerHTML = "Find out who's eating out your juicy " + firstName + " Mc" + lastName + " combo!";
+	//document.getElementById("demo2").innerHTML = "Find out who's eating out your juicy " + firstName + " Mc" + lastName + " combo!";
 }
 
 function loadGirlfriendHTML( profileName ){
