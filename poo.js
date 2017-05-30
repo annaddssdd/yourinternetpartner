@@ -40,7 +40,7 @@ function loadGirlfriendHTML(profileName) {
 		if (profileName === "Anna Gan") {
 		girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
 	} else if (profileName === "Yifei Li") {
-		girlfriendHTML = "<img src=\"girlfriend3.jpg\">";
+		girlfriendHTML = "<img src=\"girlfriend3.JPG\">";
 	} else if (profileName === "Ivy Calvert") {
 		girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
 	} else if (profileName === "Tom Lewis") {
