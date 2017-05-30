@@ -32,7 +32,7 @@ function onSuccess(googleUser) {
 
 function loadGirlfriendHTML( profileName ){
 	var girlfriendHTML;
-	if (onSuccess) {
+	if ('onSuccess') {
 		if (profileName === "Anna Gan") {
 		girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
 	} else if (profileName === "Ellen Kelly") {
