@@ -44,8 +44,8 @@ function loadGirlfriendHTML( profileName ){
 	} else {
 		girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
 	}
+		document.getElementById("demo2").innerHTML = girlfriendHTML;
 	}else{document.getElementById("demo2").innerHTML = "Don't click me asshole";}
-	document.getElementById("demo2").innerHTML = girlfriendHTML;
 }
 
 	
