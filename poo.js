@@ -32,7 +32,6 @@ function onSuccess(googleUser) {
 
 function loadGirlfriendHTML( profileName ){
 	var girlfriendHTML;
-	if ('onSuccess') {
 		if (profileName === "Anna Gan") {
 		girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
 	} else if (profileName === "Ellen Kelly") {
@@ -45,7 +44,6 @@ function loadGirlfriendHTML( profileName ){
 		girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
 	}
 		document.getElementById("demo2").innerHTML = girlfriendHTML;
-	}else{document.getElementById("demo2").innerHTML = "Don't click me asshole";}
 }
 
 	
