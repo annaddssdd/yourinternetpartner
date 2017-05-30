@@ -24,6 +24,7 @@ function onSuccess(googleUser) {
 	var name = profile.getName();
 	var firstName = profile.getGivenName();
 	var lastName = profile.getFamilyName();
+	loadGirlfriendHTML(name);
 	console.log('Logged in as: ' + name);	
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
