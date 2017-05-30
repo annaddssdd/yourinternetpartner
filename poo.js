@@ -1,6 +1,6 @@
 var clicks = 0;
-var signInSuccess = false;
-var signInName = "";
+//var signInSuccess = false;
+//var signInName = "";
 function onClick() {
 		if (clicks === 0) {
 		document.getElementById("demo").innerHTML = "go back to your family"; 
@@ -21,12 +21,12 @@ function onClick() {
 
 
 function onSuccess(googleUser) {
-	signInSuccess = true;
+	//signInSuccess = true;
 	var profile = googleUser.getBasicProfile();
 	var name = profile.getName();
 	var firstName = profile.getGivenName();
 	var lastName = profile.getFamilyName();
-	
+	loadGirlfriendHTML();
 	console.log('Logged in as: ' + name);	
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
