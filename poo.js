@@ -30,26 +30,40 @@ function onSuccess(googleUser) {
 	console.log('Logged in as: ' + name);	
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
-	document.getElementById("demo2").innerHTML = "Find out who's eating out your juicy " + firstName + " Mc" + lastName + " combo!";
+	
+	var things = ["Find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click here to see who\'s getting the " + lastName + " in their buns!", "This one\'s getting the special " + lastName + " sauce in their stuffed crust <3"];
+	var thing = things[Math.floor(Math.random()*things.length)];
+	document.getElementById("demo2").innerHTML = thing;
 }
 
 function loadGirlfriendHTML(profileName) {
 	var profileName = signInName;	
+	var things = ["<img src=\"girlfriend4.jpg\">", "<img src=\"girlfriend5.jpg\">", "<img src=\"girlfriend6.jpg\">", "<img src=\"girlfriend7.jpg\">"];
+	var thing = things[Math.floor(Math.random()*things.length)];
+	document.getElementById("demo2").innerHTML = thing;
 	if (signInSuccess) {
-		console.log("trgftrfctr", profileName);
 		var girlfriendHTML;
-
-		if (profileName === "Anna Gan") {
+			if (profileName === "Anna Gan") {
 			girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
-		} else if (profileName === "Yifei Li") {
-			girlfriendHTML = "<img src=\"girlfriend3.JPG\">";
-		} else if (profileName === "Ivy Calvert") {
-			girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
-		} else if (profileName === "Tom Lewis") {
-			girlfriendHTML = "<img src=\"girlfriend5.jpg\">";
-		} else {
+				} else if (profileName === "Ivy Calvert") {
 			girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
+				} else if (profileName === "Tom Lewis") {
+			girlfriendHTML = "<img src=\"girlfriend3.jpg\">";
+				} else {
+			girlfriendHTML = thing;
 		}
+		
+		//if (profileName === "Anna Gan") {
+			//girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
+		//} else if (profileName === "Yifei Li") {
+			//girlfriendHTML = "<img src=\"girlfriend3.JPG\">";
+		//} else if (profileName === "Ivy Calvert") {
+			//girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
+		//} else if (profileName === "Tom Lewis") {
+			//girlfriendHTML = "<img src=\"girlfriend5.jpg\">";
+		//} else {
+			//girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
+		//}
 		document.getElementById("demo2").innerHTML = girlfriendHTML;
 	}
 }
