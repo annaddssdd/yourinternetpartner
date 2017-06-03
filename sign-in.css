@@ -55,6 +55,8 @@ a:active {
 	height: 35%;
 	border: white 10px solid;
 	background-color: hotpink;
+    cursor: pointer;
+	padding-bottom: 10px;
 }
 
 .button {
