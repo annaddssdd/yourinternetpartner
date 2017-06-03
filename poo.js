@@ -31,7 +31,7 @@ function onSuccess(googleUser) {
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
 	
-	var things = ["Click me to find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click me to see who\'s getting drizzled by your creamy " + lastName + " sauce!", "Click me to see who just dropped a new hit single! (That's you, " + firstName + ". You're the single.)"];
+	var things = ["Click me to find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click me to see who\'s getting drizzled with your creamy " + lastName + " sauce!", "Click me to see who just dropped a new hit single! (That's you, " + firstName + ". You're the single.)"];
 	var thing = things[Math.floor(Math.random()*things.length)];
 	document.getElementById("demo2").innerHTML = thing;
 
