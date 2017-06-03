@@ -51,8 +51,8 @@ a:active {
 
 #girlfriend {
 	margin: auto;
-	width: 35%;
-	height: 35%;
+	width: 50%;
+	height: 50%;
 	border: white 10px solid;
 	background-color: hotpink;
     cursor: pointer;
