@@ -48,7 +48,7 @@ function loadGirlfriendHTML(profileName) {
 		var age = Math.floor((Math.random() * 70) + 18);
 		var occupations = ["Student", "Lonely House Wife", "Software Engineer", "Gynaecologist", "Soundcloud DJ", "Weeduser", "Business Advisor", "Marine Biologist"];
 		var occupation = occupations[Math.floor(Math.random()*occupations.length)];
-		var interest = ["Helping orphan children", "Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew"];
+		var interest = ["Helping orphan children", "Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Getting drunk and/or high to forget about emotional pain, then ending up with a more painful emotional hangover", "Has 4 joy division shirts in their closet, which is 5 joy division shirts too many", "Going on reddit, then crying for going on reddit", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew"];
 		var interests = interest[Math.floor(Math.random()*interest.length)];
 		document.getElementById("congratz").innerHTML = "Your New Lover... " + fristName + " " + rastName + "!";
 		document.getElementById("demo2").innerHTML = "Age: " + age + " Occupation: " + occupation + " Interests: " + interests;
