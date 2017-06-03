@@ -31,40 +31,75 @@ function onSuccess(googleUser) {
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
 	
-	var things = ["Find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click here to see who\'s getting the " + lastName + " in their buns!", "This one\'s getting the special " + lastName + " sauce in their stuffed crust <3"];
+	var things = ["Click me to find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click me to see who\'s getting drizzled by your creamy " + lastName + " sauce!", "Click me to see who just dropped a new hit single! (That's you, " + firstName + ". You're the single.)"];
 	var thing = things[Math.floor(Math.random()*things.length)];
 	document.getElementById("demo2").innerHTML = thing;
+
 }
 
 function loadGirlfriendHTML(profileName) {
 	var profileName = signInName;	
-	var things = ["<img src=\"girlfriend4.jpg\">", "<img src=\"girlfriend5.jpg\">", "<img src=\"girlfriend6.jpg\">", "<img src=\"girlfriend7.jpg\">"];
-	var thing = things[Math.floor(Math.random()*things.length)];
-	document.getElementById("demo2").innerHTML = thing;
 	if (signInSuccess) {
+	if (clicks === 0) {
+		var firstNames = ["Bob John", "Sue", "Naruto", "Janet", "Chihuahua", "Tekken", "Mario", "Jesus", "Dragon", "Daddy"];
+		var fristName = firstNames[Math.floor(Math.random()*firstNames.length)];
+		var lastNames = ["Fabio", "Gan", "Squarepants", "America", "Weeduser", "Inmyasol", "Muscleman", "Oracle", "Mayonnaise", "Giraldo"];
+		var rastName = lastNames[Math.floor(Math.random()*lastNames.length)];
+		var age = Math.floor((Math.random() * 70) + 18);
+		var occupations = ["Student", "Lonely House Wife", "Software Engineer", "Gynaecologist", "Soundcloud DJ", "Weeduser", "Business Advisor", "Marine Biologist"];
+		var occupation = occupations[Math.floor(Math.random()*occupations.length)];
+		var interest = ["Helping orphan children", "Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew"];
+		var interests = interest[Math.floor(Math.random()*interest.length)];
+		document.getElementById("congratz").innerHTML = "Your New Lover... " + fristName + " " + rastName + "!";
+		document.getElementById("demo2").innerHTML = "Age: " + age + " Occupation: " + occupation + " Interests: " + interests;
+		document.getElementById("clickAgain").innerHTML = "Want to know what they look like? Click me again!";
+		clicks += 1;
+		
+		} else if (clicks === 1) {
 		var girlfriendHTML;
+		var images = ["<img src=\"poo2.jpg\">", "<img src=\"girlfriend1.jpg\">", "<img src=\"girlfriend15.jpg\">", "<img src=\"girlfriend21.jpg\">", "<img src=\"girlfriend13.jpg\">", "<img src=\"girlfriend16.jpg\">", "<img src=\"girlfriend17.jpg\">", "<img src=\"girlfriend18.jpg\">", "<img src=\"girlfriend19.jpg\">", "<img src=\"girlfriend20.jpg\">", "<img src=\"girlfriend23.jpg\">"];
+		var image = images[Math.floor(Math.random()*images.length)];
 			if (profileName === "Anna Gan") {
 			girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
 				} else if (profileName === "Ivy Calvert") {
 			girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
-				} else if (profileName === "Tom Lewis") {
+				} else if (profileName === "Tess Griffiths") {
+			girlfriendHTML = "<img src=\"girlfriend8.jpg\">";
+				} else if (profileName === "Mahkaila Jones") {
+			girlfriendHTML = "<img src=\"girlfriend10.jpg\">";
+				} else if (profileName === "Bryan Loh") {
+			girlfriendHTML = "<img src=\"girlfriend5.jpg\">";
+				} else if (profileName === "Shivashish Andrews") {
+			girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
+				} else if (profileName === "Phoebe Zeller") {
+			girlfriendHTML = "<img src=\"girlfriend7.jpg\">";
+				} else if (profileName === "Yifei Li") {
 			girlfriendHTML = "<img src=\"girlfriend3.jpg\">";
+				} else if (profileName === "May Huang") {
+			girlfriendHTML = "<img src=\"girlfriend9.jpg\">";
+				} else if (profileName === "Ellen Kelly") {
+			girlfriendHTML = "<img src=\"girlfriend12.jpg\">";
+				} else if (profileName === "Kristin Li") {
+			girlfriendHTML = "<img src=\"girlfriend11.jpg\">";
+				} else if (profileName === "Elyse Phee") {
+			girlfriendHTML = "<img src=\"girlfriend14.jpg\">";
+				} else if (profileName === "Wendy Pang") {
+			girlfriendHTML = "<img src=\"girlfriend6.jpg\">";
+				} else if (profileName === "Sarah Song") {
+			girlfriendHTML = "<img src=\"girlfriend11.jpg\">";
+				} else if (profileName === "Jenna McGrath") {
+			girlfriendHTML = "<img src=\"girlfriend14.jpg\">";
 				} else {
-			girlfriendHTML = thing;
-		}
+			girlfriendHTML = image;
+				}
 		
-		//if (profileName === "Anna Gan") {
-			//girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
-		//} else if (profileName === "Yifei Li") {
-			//girlfriendHTML = "<img src=\"girlfriend3.JPG\">";
-		//} else if (profileName === "Ivy Calvert") {
-			//girlfriendHTML = "<img src=\"girlfriend4.jpg\">";
-		//} else if (profileName === "Tom Lewis") {
-			//girlfriendHTML = "<img src=\"girlfriend5.jpg\">";
-		//} else {
-			//girlfriendHTML = "<img src=\"girlfriend2.jpg\">";
-		//}
 		document.getElementById("demo2").innerHTML = girlfriendHTML;
+		document.getElementById("clickAgain").innerHTML = "They can't wait to get to know you! Start chatting with them HERE!";
+		
+		clicks +=1
+		} 
+	} else {
+		document.getElementById("demo2").innerHTML = "dont click me asshole";
 	}
 }
 
@@ -94,6 +129,8 @@ function signOut() {
     auth2.signOut().then(function () {
       console.log('User signed out.');
 				document.getElementById("demo2").innerHTML = "CHECK OUT YOUR GIRLFRIEND NOW!";
+				document.getElementById("congratz").innerHTML = "";
+				document.getElementById("clickAgain").innerHTML = "";
 	});
   }
  
