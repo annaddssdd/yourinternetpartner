@@ -21,6 +21,7 @@ function onClick() {
 }
 
 
+
 function onSuccess(googleUser) {
 	signInSuccess = true;
 	var profile = googleUser.getBasicProfile();
@@ -35,13 +36,11 @@ function onSuccess(googleUser) {
 	var things = ["Click me to find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click me to see who\'s getting drizzled with your creamy " + lastName + " sauce!", "Click me to see who just dropped a new hit single! (That's you, " + firstName + ". You're the single.)"];
 	var thing = things[Math.floor(Math.random()*things.length)];
 	document.getElementById("demo2").innerHTML = thing;
-	document.getElementById("messengerBot").style.display = 'none';
 }
 
 
 
 function loadGirlfriendHTML(profileName) {
-	document.getElementById("messengerBot").style.display = 'none';
 	var profileName = signInName;	
 	if (signInSuccess) {
 	if (clicks === 0) {
@@ -52,7 +51,7 @@ function loadGirlfriendHTML(profileName) {
 		var age = Math.floor((Math.random() * 70) + 18);
 		var occupations = ["Student", "Lonely House Wife", "Software Engineer", "Gynaecologist", "Soundcloud DJ", "Weeduser", "Business Advisor", "Marine Biologist"];
 		var occupation = occupations[Math.floor(Math.random()*occupations.length)];
-		var interest = ["Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Getting drunk and/or high to forget about emotional pain, then ending up with a more painful emotional hangover", "Has 4 joy division shirts in their closet, which is 5 joy division shirts too many", "Going on reddit, then crying for going on reddit", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew", "Acting like they don't like their crush, then crying when their crush doesn't give them attention", "Looking for a 'twink' section in every library/website/institution", "Playing League of Legends, then crying for playing League of Legends", "Playing 'the floor is lava' but instead of lava the floor is commitment", "Asking people of colour who were born and raised in Wellington where are"];
+		var interest = ["Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Getting drunk and/or high to forget about emotional pain, then ending up with a more painful emotional hangover", "Has 4 joy division shirts in their closet, which is 5 joy division shirts too many", "Going on reddit, then crying for going on reddit", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew", "Acting like they don't like their crush, then crying when their crush doesn't give them attention", "Looking for a 'twink' section in every library/website/institution", "Playing League of Legends, then crying for playing League of Legends", "Playing 'the floor is lava' but instead of lava the floor is commitment", "Calling not only their dad 'Zaddy', but your dad too", "Changing the song to Untouched by the Veronicas at every party they attend"];
 		var interests = interest[Math.floor(Math.random()*interest.length)];
 		document.getElementById("congratz").innerHTML = "Your New Lover... " + fristName + " " + rastName + "!";
 		document.getElementById("demo2").innerHTML = "Age: " + age + " Occupation: " + occupation + " Interests: " + interests;
@@ -98,13 +97,12 @@ function loadGirlfriendHTML(profileName) {
 				}
 		document.getElementById("demo2").innerHTML = girlfriendHTML;
 		document.getElementById("clickAgain").innerHTML = "They can't wait to get to know you! Just click on your options below and start chatting with them NOW!";
-		console.log ('you suck');
 		document.getElementById("messengerBot").style.display = 'block';
-		console.log ('but i love you');
 		clicks +=1
 		} 
 	} else {
 		document.getElementById("demo2").innerHTML = "dont click me asshole";
+		document.getElementById("messengerBot").style.display = 'none';
 	}
 }
 
@@ -135,7 +133,7 @@ function signOut() {
       console.log('User signed out.');
 		document.getElementById("demo2").innerHTML = "SIGN IN AND WATCH THIS SPACE....";
 		document.getElementById("congratz").innerHTML = "";
-		document.getElementById("clickAgain").innerHTML = "";;
+		document.getElementById("clickAgain").innerHTML = "";
 		document.getElementById("messengerBot").style.display = 'none';
 		location.reload();
 	});
