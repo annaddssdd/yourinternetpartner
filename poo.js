@@ -1,6 +1,7 @@
 var clicks = 0;
 var signInSuccess = false;
 var signInName = "";
+
 function onClick() {
 		if (clicks === 0) {
 		document.getElementById("demo").innerHTML = "go back to your family"; 
@@ -34,21 +35,24 @@ function onSuccess(googleUser) {
 	var things = ["Click me to find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click me to see who\'s getting drizzled with your creamy " + lastName + " sauce!", "Click me to see who just dropped a new hit single! (That's you, " + firstName + ". You're the single.)"];
 	var thing = things[Math.floor(Math.random()*things.length)];
 	document.getElementById("demo2").innerHTML = thing;
-
+	document.getElementById("messengerBot").style.display = 'none';
 }
 
+
+
 function loadGirlfriendHTML(profileName) {
+	document.getElementById("messengerBot").style.display = 'none';
 	var profileName = signInName;	
 	if (signInSuccess) {
 	if (clicks === 0) {
-		var firstNames = ["Bob John", "Sue", "Naruto", "Janet", "Chihuahua", "Tekken", "Mario", "Jesus", "Dragon", "Daddy"];
+		var firstNames = ["Bob John", "Sue", "Naruto", "Janet", "Mahkaila", "Chihuahua", "Tekken", "Mario", "Jesus", "Dragon", "Daddy"];
 		var fristName = firstNames[Math.floor(Math.random()*firstNames.length)];
-		var lastNames = ["Fabio", "Gan", "Squarepants", "America", "Weeduser", "Inmyasol", "Muscleman", "Oracle", "Mayonnaise", "Giraldo"];
+		var lastNames = ["Fabio", "Gan", "Squarepants", "Jones", "America", "Weeduser", "Inmyasol", "Muscleman", "Oracle", "Mayonnaise", "Giraldo"];
 		var rastName = lastNames[Math.floor(Math.random()*lastNames.length)];
 		var age = Math.floor((Math.random() * 70) + 18);
 		var occupations = ["Student", "Lonely House Wife", "Software Engineer", "Gynaecologist", "Soundcloud DJ", "Weeduser", "Business Advisor", "Marine Biologist"];
 		var occupation = occupations[Math.floor(Math.random()*occupations.length)];
-		var interest = ["Helping orphan children", "Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Getting drunk and/or high to forget about emotional pain, then ending up with a more painful emotional hangover", "Has 4 joy division shirts in their closet, which is 5 joy division shirts too many", "Going on reddit, then crying for going on reddit", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew"];
+		var interest = ["Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Getting drunk and/or high to forget about emotional pain, then ending up with a more painful emotional hangover", "Has 4 joy division shirts in their closet, which is 5 joy division shirts too many", "Going on reddit, then crying for going on reddit", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew", "Acting like they don't like their crush, then crying when their crush doesn't give them attention", "Looking for a 'twink' section in every library/website/institution", "Playing League of Legends, then crying for playing League of Legends", "Playing 'the floor is lava' but instead of lava the floor is commitment", "Asking people of colour who were born and raised in Wellington where are"];
 		var interests = interest[Math.floor(Math.random()*interest.length)];
 		document.getElementById("congratz").innerHTML = "Your New Lover... " + fristName + " " + rastName + "!";
 		document.getElementById("demo2").innerHTML = "Age: " + age + " Occupation: " + occupation + " Interests: " + interests;
@@ -57,7 +61,7 @@ function loadGirlfriendHTML(profileName) {
 		
 		} else if (clicks === 1) {
 		var girlfriendHTML;
-		var images = ["<img src=\"poo2.jpg\">", "<img src=\"girlfriend1.jpg\">", "<img src=\"girlfriend15.jpg\">", "<img src=\"girlfriend21.jpg\">", "<img src=\"girlfriend13.jpg\">", "<img src=\"girlfriend16.jpg\">", "<img src=\"girlfriend17.jpg\">", "<img src=\"girlfriend18.jpg\">", "<img src=\"girlfriend19.jpg\">", "<img src=\"girlfriend20.jpg\">", "<img src=\"girlfriend23.jpg\">"];
+		var images = ["<img src=\"poo2.jpg\">", "<img src=\"girlfriend1.jpg\">", "<img src=\"girlfriend15.jpg\">", "<img src=\"girlfriend21.jpg\">", "<img src=\"girlfriend13.jpg\">", "<img src=\"girlfriend16.jpg\">", "<img src=\"girlfriend17.jpg\">", "<img src=\"girlfriend18.jpg\">", "<img src=\"girlfriend19.jpg\">", "<img src=\"girlfriend20.jpg\">", "<img src=\"girlfriend23.jpg\">", "<img src=\"girlfriend6.jpg\">", "<img src=\"girlfriend22.jpg\">"];
 		var image = images[Math.floor(Math.random()*images.length)];
 			if (profileName === "Anna Gan") {
 			girlfriendHTML = "<img src=\"girlfriend1.jpg\">";
@@ -92,10 +96,11 @@ function loadGirlfriendHTML(profileName) {
 				} else {
 			girlfriendHTML = image;
 				}
-		
 		document.getElementById("demo2").innerHTML = girlfriendHTML;
-		document.getElementById("clickAgain").innerHTML = "They can't wait to get to know you! Start chatting with them HERE!";
-		
+		document.getElementById("clickAgain").innerHTML = "They can't wait to get to know you! Just click on your options below and start chatting with them NOW!";
+		console.log ('you suck');
+		document.getElementById("messengerBot").style.display = 'block';
+		console.log ('but i love you');
 		clicks +=1
 		} 
 	} else {
@@ -120,7 +125,7 @@ function renderButton() {
 			'onfailure': onFailure
 			});
 	}
-
+	
 
 
 function signOut() {
@@ -130,8 +135,26 @@ function signOut() {
       console.log('User signed out.');
 		document.getElementById("demo2").innerHTML = "SIGN IN AND WATCH THIS SPACE....";
 		document.getElementById("congratz").innerHTML = "";
-		document.getElementById("clickAgain").innerHTML = "";
+		document.getElementById("clickAgain").innerHTML = "";;
+		document.getElementById("messengerBot").style.display = 'none';
 		location.reload();
 	});
   }
- 
+  
+  
+window.fbAsyncInit = function() {
+      FB.init({
+        appId: "2290633061161942",
+        xfbml: true,
+        version: "v2.6"
+      });
+
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) { return; }
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
