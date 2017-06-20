@@ -7,10 +7,10 @@ function onClick() {
 		document.getElementById("demo").innerHTML = "go back to your family"; 
 		clicks += 1;
 		} else if (clicks === 1) {
-		document.getElementById("demo").innerHTML = "no matter how much you try you will not find love";
+		document.getElementById("demo").innerHTML = "Have you called your parents today? You should. They've been thinking about you.";
 		clicks +=1
 		} else if (clicks === 2) {
-		document.getElementById("demo").innerHTML = "god..... does not exist";
+		document.getElementById("demo").innerHTML = "I know you're alone, I am too.";
 		clicks +=1
 		} else if (clicks === 3) {
 		document.getElementById("demo").innerHTML = "<img src=\"poo.jpg\">"; //backslash is for the special onez
