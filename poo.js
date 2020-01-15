@@ -4,18 +4,15 @@ var signInName = "";
 
 function onClick() {
 		if (clicks === 0) {
-		document.getElementById("demo").innerHTML = "go back to your family"; 
+		document.getElementById("demo").innerHTML = "Are you ready for love? Click again!"; 
 		clicks += 1;
 		} else if (clicks === 1) {
-		document.getElementById("demo").innerHTML = "Have you called your parents today? You should. They've been thinking about you.";
+		document.getElementById("demo").innerHTML = "Do you miss your parents? Give them a call, they miss you. Click again!";
 		clicks +=1
 		} else if (clicks === 2) {
-		document.getElementById("demo").innerHTML = "I know you're alone, I am too.";
+		document.getElementById("demo").innerHTML = "Don't trust anyone, it's not worth it. Click again!";
 		clicks +=1
 		} else if (clicks === 3) {
-		document.getElementById("demo").innerHTML = "<img src=\"poo.jpg\">"; //backslash is for the special onez
-		clicks +=1
-		} else if (clicks === 4) {
 		window.location.href = "sign-in.html";
 		} 
 }
@@ -33,7 +30,7 @@ function onSuccess(googleUser) {
 	console.log('ID: ' + profile.getId());
 	console.log('Email: ' + profile.getEmail());
 	
-	var things = ["Click me to find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click me to see who\'s getting drizzled with your creamy " + lastName + " sauce!", "Click me to see who just dropped a new hit single! (That's you, " + firstName + ". You're the single.)"];
+	var things = ["Click me to find out who\'s eating out your juicy " + firstName + " Mc" + lastName + " combo!", "Click me to see who\'s getting drizzled with your creamy " + lastName + " sauce!", "Click me to see who just dropped a new hot single! (That's you, " + firstName + ". You're the single.)"];
 	var thing = things[Math.floor(Math.random()*things.length)];
 	document.getElementById("demo2").innerHTML = thing;
 }
@@ -49,9 +46,9 @@ function loadGirlfriendHTML(profileName) {
 		var lastNames = ["Fabio", "Gan", "Squarepants", "Jones", "America", "Weeduser", "Inmyasol", "Muscleman", "Oracle", "Mayonnaise", "Giraldo"];
 		var rastName = lastNames[Math.floor(Math.random()*lastNames.length)];
 		var age = Math.floor((Math.random() * 70) + 18);
-		var occupations = ["Student", "Lonely House Wife", "Software Engineer", "Gynaecologist", "Soundcloud DJ", "Weeduser", "Business Advisor", "Marine Biologist"];
+		var occupations = ["Student", "House Wife", "Software Engineer", "Gynaecologist", "Soundcloud DJ", "Weed Farmer", "Business Advisor", "Marine Biologist", "Online Performer"];
 		var occupation = occupations[Math.floor(Math.random()*occupations.length)];
-		var interest = ["Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Getting drunk and/or high to forget about emotional pain, then ending up with a more painful emotional hangover", "Has 4 joy division shirts in their closet, which is 5 joy division shirts too many", "Going on reddit, then crying for going on reddit", "Smoke pot, then crying for smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting their 5 year old nephew", "Acting like they don't like their crush, then crying when their crush doesn't give them attention", "Looking for a 'twink' section in every library/website/institution", "Playing League of Legends, then crying for playing League of Legends", "Playing 'the floor is lava' but instead of lava the floor is commitment", "Calling not only their dad 'Zaddy', but your dad too", "Changing the song to Untouched by the Veronicas at every party they attend"];
+		var interest = ["Helping lonely elderly people", "Helping endangered animals overcome their genetic bottleneck", "Providing food for the homeless community", "Getting drunk and/or high to forget about emotional pain, then ending up with a more painful emotional hangover", "Has 4 joy division shirts in their closet, which is 5 joy division shirts too many", "Going on r/WorldJerking", "Smoking pot", "Watching anime, playing dating simulation games, pretending they know more Japanese than an actual Japanese person", "Fighting children", "Acting like they don't like their crush, running away from their crush", "Looking for a 'twink' section in every library/website/institution", "Playing League of Legends", "Playing 'the floor is lava' but instead of lava the floor is commitment", "Calling everyone's dads 'Daddy'", "Changing the song to Untouched by the Veronicas at every party they attend"];
 		var interests = interest[Math.floor(Math.random()*interest.length)];
 		document.getElementById("congratz").innerHTML = "Your New Lover... " + fristName + " " + rastName + "!";
 		document.getElementById("demo2").innerHTML = "Age: " + age + " Occupation: " + occupation + " Interests: " + interests;
